@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquitectura Web Estática en AWS</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Arquitectura Web Estática en AWS</h1>
+      <p>
+        Descubre cómo los servicios Amazon S3 y Amazon CloudFront colaboran para entregar una experiencia web rápida y confiable.
+      </p>
+    </header>
+
+    <main>
+      <section class="service" data-service="s3">
+        <h2>Amazon S3</h2>
+        <p>
+          Amazon Simple Storage Service (S3) es un almacenamiento de objetos
+          altamente escalable que te permite guardar archivos estáticos (HTML,
+          CSS, JavaScript, imágenes y más) para tu sitio web.
+        </p>
+        <ul>
+          <li>99.999999999% de durabilidad para tus objetos.</li>
+          <li>Control de acceso granular mediante políticas y ACL.</li>
+          <li>
+            Integración nativa con servicios de despliegue y automatización como
+            AWS CDK, CloudFormation o herramientas de CI/CD.
+          </li>
+        </ul>
+      </section>
+
+      <section class="service" data-service="cloudfront">
+        <h2>Amazon CloudFront</h2>
+        <p>
+          Amazon CloudFront es la red de entrega de contenido (CDN) de AWS. Cachea tu
+          contenido en ubicaciones perimetrales alrededor del mundo para reducir
+          la latencia y mejorar la experiencia de tus usuarios.
+        </p>
+        <ul>
+          <li>Distribución global con cientos de edge locations.</li>
+          <li>Compatibilidad con certificados TLS administrados por ACM.</li>
+          <li>
+            Reglas de comportamiento y funciones en el edge para personalizar la
+            entrega de contenido.
+          </li>
+        </ul>
+      </section>
+
+    <footer>
+      <button id="architecture-btn">Mostrar Diagrama de Arquitectura</button>
+      <p id="architecture-text" aria-live="polite"></p>
+    </footer>
+
+    <div
+      class="modal"
+      id="architecture-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 id="modal-title">Arquitectura de la solución</h2>
+          <button type="button" class="modal-close" id="close-architecture-modal" aria-label="Cerrar modal">
+            ×
+          </button>
+        </header>
+        <figure>
+          <img
+            src="assets/architecture.png"
+            width="700"
+            alt="Diagrama: usuarios consultan el dominio, CloudFront distribuye contenido desde un bucket S3."
+          />
+          <figcaption>
+            Usuarios → CloudFront → S3.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
