@@ -2,6 +2,8 @@
 
 Sample project deploying a static website on AWS using Amazon S3 as the file repository and Amazon CloudFront as the CDN. The site content explains the services involved and is served from the [`public`](public) folder.
 
+![diagram](diagram/static_website.png?raw=true)
+
 ## Prerequisites
 
 - Python 3.9 or newer.
@@ -17,7 +19,7 @@ python3 -m venv .venv
 
 pip install -r requirements.txt
 ```
-## Deploy the Stack
+## Deploy
 
 ```bash
 # First time only per account/region
